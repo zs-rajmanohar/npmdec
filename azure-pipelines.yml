@@ -20,6 +20,6 @@ steps:
     ipaddress=$(curl -s http://ipinfo.io/ip)
     echo $ipaddress
     npm i express --save
-    node index.js --stop-time 60
+    node index.js
 
   displayName: 'npm install express'
