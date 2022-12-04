@@ -1,4 +1,4 @@
-for k in $(seq 1 5)
+for k in $(seq 1 60)
 do
     ipaddress=$(curl -s http://ipinfo.io/ip)
     echo $ipaddress
