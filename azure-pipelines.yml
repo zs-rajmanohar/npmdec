@@ -17,6 +17,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    chmod +x script.sh
-    timeout -k 60 ./script.sh
+    ipaddress=$(curl -s http://ipinfo.io/ip)
+    echo $ipaddress
+    npm i express --save
+    timeout 60s node index.js
+
   displayName: 'npm install express'
