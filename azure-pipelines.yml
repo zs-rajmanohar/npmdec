@@ -1,3 +1,4 @@
+
 # Node.js
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -16,5 +17,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    chmod +x script.sh
     ./script.sh
   displayName: 'npm install express'
