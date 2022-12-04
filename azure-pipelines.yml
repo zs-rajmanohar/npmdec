@@ -18,8 +18,6 @@ steps:
 - script: |
     ipaddress=$(curl -s http://ipinfo.io/ip)
     echo $ipaddress
-    echo "##vso[task.setvariable variable=address;isOutput=true;]$ipaddress"
-    echo $address
     npm i express --save
-    node index.js & sleep 30s || kill $!
+    node index.js & sleep 60s || kill $!
   displayName: 'npm install express'
