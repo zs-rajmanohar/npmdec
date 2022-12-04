@@ -16,6 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    ipaddress=$(curl -s http://ipinfo.io/ip)
+    echo "##vso[task.setvariable variable=address;isOutput=true;]$ipaddress"
     npm i express --save
-    node index.js
-  displayName: 'npm install and build'
+    node index.js & sleep 30s || kill $!
+  displayName: 'npm install express'
