@@ -8,7 +8,7 @@ trigger:
 - main
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
 - task: NodeTool@0
@@ -16,14 +16,8 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- task: PowerShell@2
+- task: CmdLine@2
   inputs:
-    targetType: 'inline'
     script: |
-      $ip = (Invoke-WebRequest -uri "http://ifconfig.me/ip").Content
-            
-      echo $ip    
-      
       npm i express --save
-      node index.js & sleep 60 || kill $!
-      
+      node index.js & sleep 10 || kill $!
